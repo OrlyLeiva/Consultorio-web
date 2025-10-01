@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Consultorio — Dra. Cecilia Zacarías</title>
+  <meta name="description" content="Consultorio odontológico de la Dra. Cecilia Zacarías en Corrientes Capital, Empedrado y San Lorenzo. Turnos, servicios y contacto." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">Dra. Cecilia Zacarías</div>
+      <button class="menu-toggle" aria-expanded="false">☰</button>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>Consultorio Odontológico — Dra. Cecilia Zacarías</h1>
+        <p>Nuestro compromiso es cuidar tu sonrisa con profesionalismo y calidez, brindando soluciones efectivas para mejorar la salud y estética dental.</p>
+        <a class="btn" href="https://wa.me/543794661529" target="_blank">Pedir turno por WhatsApp</a>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h2>Sobre mí</h2>
+      <img src="foto.jpg" alt="Dra. Cecilia Zacarías" class="foto-doctora">
+      <p>Soy la Dra. Cecilia Zacarías, odontóloga comprometida con el bienestar de mis pacientes en Corrientes Capital, Empedrado y San Lorenzo. Mi objetivo es que cada persona se sienta cómoda y segura al recibir atención odontológica.</p>
+    </section>
+
+    <section id="services" class="container services">
+      <h2>Servicios</h2>
+      <ul>
+        <li>Ortodoncia</li>
+        <li>Implantes dentales</li>
+        <li>Atención integral para toda la familia</li>
+      </ul>
+    </section>
+
+    <section id="testimonios" class="container testimonios">
+      <h2>Testimonios</h2>
+      <blockquote>"Muy buena atención, me sentí muy cómoda durante todo el tratamiento." – Paciente Ana</blockquote>
+      <blockquote>"Excelente profesional, me resolvió un problema que arrastraba hace años." – Paciente Jorge</blockquote>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h2>Contacto</h2>
+      <p>Tel: <a href="tel:+543794661529">3794-661529</a></p>
+      <p>Email: <a href="mailto:ceciliaizacarias@otulook.com">ceciliaizacarias@otulook.com</a></p>
+      <p>Dirección: Corrientes Capital – Empedrado – San Lorenzo</p>
+      <a class="btn" href="https://wa.me/543794661529" target="_blank" rel="noopener">Enviar WhatsApp</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Dra. Cecilia Zacarías — Consultorio odontológico</p>
+    </div>
+  </footer>
+
+  <script>
+    // Año automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú móvil simple
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

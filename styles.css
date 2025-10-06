@@ -226,4 +226,85 @@ section {
     margin: 5px;
   }
 }
+/* ===================== */
+/* NAVBAR RESPONSIVE */
+/* ===================== */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eaf7ea;
+  padding: 10px 25px;
+  border-bottom: 1px solid #c8e1c8;
+}
+
+.logo {
+  font-weight: bold;
+  color: #146c2e;
+  font-size: 18px;
+}
+
+/* Enlaces del menú */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #1d8f43;
+}
+
+/* Botón menú hamburguesa (oculto en escritorio) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #146c2e;
+}
+
+/* --- Adaptación para pantallas chicas (celular/tablet) --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    width: 190px;
+    padding: 15px;
+    text-align: right;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links a {
+    color: #146c2e;
+  }
+}
+
 

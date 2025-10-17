@@ -1,35 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dra. Cecilia Zacarías - Consultorio Odontológico</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Estilos específicos de la galería (puedes mover esto a styles.css si querés) -->
+  <style>
+    /* Estilos galería */
+    .gallery-grid {
+      max-width: 1100px;
+      margin: 18px auto 30px;
+      display: grid;
+      grid-template-columns: 1fr 0.9fr 1fr;
+      gap: 28px;
+      align-items: start;
+      justify-items: center;
+      padding: 10px 20px;
+    }
+
+    .slot {
+      width: 100%;
+      display:flex;
+      justify-content:center;
+    }
+
+    .slot img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      object-fit: cover;
+      transition: opacity .6s ease, transform .6s ease;
+      opacity: 1;
+    }
+
+    /* tamaños relativos para imitar la imagen central alargada */
+    .slot-left img, .slot-right img {
+      max-width: 360px;
+      max-height: 420px;
+    }
+
+    .slot-center img {
+      max-width: 340px;
+      max-height: 720px; /* más alto */
+    }
+
+    /* responsive: apilar en pantallas chicas */
+    @media (max-width: 880px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .slot-left img, .slot-right img, .slot-center img {
+        max-width: 92%;
+        max-height: none;
+      }
+    }
+
+    /* título centrado estilo */
+    #galeria h2 {
+      color: #1d8a3b;
+      text-align:center;
+      margin-top: 6px;
+    }
+  </style>
 </head>
 <body>
 
   <!-- NAV -->
   <header>
-   <!-- Navegación principal -->
-<nav class="navbar">
-  <div class="logo">Dra. Cecilia Zacarías</div>
-  <button class="menu-toggle" id="menu-toggle">☰</button>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#sobre-mi">Sobre mí</a></li>
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#tratamientos">Tratamientos</a></li>
-    <li><a href="#consejos">Consejos</a></li>
-    <li><a href="#galeria">Galería</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-</nav>
-
+    <nav>
+      <h1>Dra. Cecilia Zacarías</h1>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#tratamientos">Tratamientos</a></li>
+        <li><a href="#consejos">Consejos</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- HERO -->
   <section id="inicio" class="hero">
-    <h2>Consultorio Odontológico — Dra. Cecilia Zacarías</h2>
+    <h2>Consultorio Odontológico Dra. Cecilia Zacarías</h2>
     <p>Nuestro compromiso es cuidar tu sonrisa con profesionalismo y calidez, brindando soluciones efectivas para mejorar la salud y estética dental.</p>
     <a href="https://wa.me/543794661529" class="btn">Pedir turno por WhatsApp</a>
   </section>
@@ -93,13 +150,13 @@
     </ul>
   </section>
 
-  <!-- GALERÍA -->
+  <!-- GALERÍA (REEMPLAZADA / ROTATIVA) -->
   <section id="galeria" class="section">
     <h2>Galería del Consultorio</h2>
-    <div class="gallery">
-      <img src="consultorio1.jpg" alt="Consultorio">
-      <img src="consultorio2.jpg" alt="Sala de espera">
-      <img src="consultorio3.jpg" alt="Equipo odontológico">
+    <div class="gallery-grid" aria-label="Galería de imágenes del consultorio">
+      <div class="slot slot-left"><img id="img-left" src="images/consultorio/consultorio1.jpg" alt="Consultorio"></div>
+      <div class="slot slot-center"><img id="img-center" src="images/consultorio/consultorio2.jpg" alt="Sala de espera"></div>
+      <div class="slot slot-right"><img id="img-right" src="images/consultorio/consultorio3.jpg" alt="Equipo odontológico"></div>
     </div>
   </section>
 
@@ -111,40 +168,99 @@
     <p><strong>Dirección:</strong> Corrientes Capital – Empedrado – San Lorenzo</p>
     <a href="https://wa.me/543794661529" class="btn">Enviar WhatsApp</a>
   </section>
-<!-- Sección Nuestro Consultorio -->
-<section class="consultorio">
-  <div class="contenedor">
-    <div class="columna">
-      <img src="consultorio.jpg" alt="Consultorio Odontológico">
+
+  <!-- Sección Nuestro Consultorio -->
+  <section class="consultorio">
+    <div class="contenedor">
+      <div class="columna">
+        <img src="consultorio.jpg" alt="Consultorio Odontológico">
+      </div>
+      <div class="columna">
+        <h2>Nuestro Consultorio</h2>
+        <p>
+          Contamos con un espacio moderno y equipado con la última tecnología, 
+          pensado para que cada paciente se sienta cómodo y seguro en cada visita.
+        </p>
+        <p>
+          Nuestro objetivo es brindarte un ambiente cálido y profesional, 
+          cuidando de tu salud y estética dental.
+        </p>
+      </div>
     </div>
-    <div class="columna">
-      <h2>Nuestro Consultorio</h2>
-      <p>
-        Contamos con un espacio moderno y equipado con la última tecnología, 
-        pensado para que cada paciente se sienta cómodo y seguro en cada visita.
-      </p>
-      <p>
-        Nuestro objetivo es brindarte un ambiente cálido y profesional, 
-        cuidando de tu salud y estética dental.
-      </p>
+  </section>
+
+  <!-- Sección Nuestro Equipo -->
+  <section class="equipo">
+    <div class="contenedor">
+      <div class="columna">
+        <img src="dra-cecilia.jpg" alt="Dra. Cecilia Zacarías">
+      </div>
+      <div class="columna">
+        <h2>Nuestro Equipo</h2>
+        <h3>Dra. Cecilia Zacarías</h3>
+        <p>
+          Especialista en ortodoncia e implantes dentales. 
+          Con más de 20 años de experiencia, acompaña a sus pacientes en cada paso, 
+          brindando atención integral y personalizada.
+        </p>
+        <p>
+          Su compromiso es combinar profesionalismo y calidez, para que cada persona 
+          se sienta segura y confiada en su tratamiento.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- FOOTER -->
   <footer>
     <p>© 2025 Dra. Cecilia Zacarías — Consultorio Odontológico</p>
   </footer>
-<script>
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
 
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-</script>
+  <!-- SCRIPT: rotación de la galería -->
+  <script>
+    (function(){
+      // Rutas de las imágenes: agregá aquí más archivos si los subís
+      const images = [
+        'images/consultorio/consultorio1.jpg',
+        'images/consultorio/consultorio2.jpg',
+        'images/consultorio/consultorio3.jpg',
+        'images/consultorio/consultorio4.jpg',
+        'images/consultorio/consultorio5.jpg'
+      ];
 
+      const imgLeft = document.getElementById('img-left');
+      const imgCenter = document.getElementById('img-center');
+      const imgRight = document.getElementById('img-right');
+
+      let startIndex = 0;
+
+      function updateSlots() {
+        // Fade out
+        [imgLeft, imgCenter, imgRight].forEach(img => img.style.opacity = 0);
+
+        setTimeout(() => {
+          imgLeft.src   = images[(startIndex) % images.length];
+          imgCenter.src = images[(startIndex + 1) % images.length];
+          imgRight.src  = images[(startIndex + 2) % images.length];
+          // Fade in
+          [imgLeft, imgCenter, imgRight].forEach(img => img.style.opacity = 1);
+        }, 300);
+
+        startIndex = (startIndex + 1) % images.length;
+      }
+
+      // Carga inicial
+      updateSlots();
+
+      // Intervalo de rotación (ms)
+      const intervalMs = 3000;
+      let timer = setInterval(updateSlots, intervalMs);
+
+      // Pausar al hover
+      const gallery = document.querySelector('.gallery-grid');
+      gallery.addEventListener('mouseenter', () => clearInterval(timer));
+      gallery.addEventListener('mouseleave', () => timer = setInterval(updateSlots, intervalMs));
+    })();
+  </script>
 </body>
 </html>
-
-
